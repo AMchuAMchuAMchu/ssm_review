@@ -1,5 +1,6 @@
 package com.itcast.mvc;
 
+import com.itcast.entity.Anime;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,11 +27,18 @@ public class AnimeController {
 
 
     @GetMapping("/m01")
-    public String  m01(@RequestParam List<String> animes){
-        animes.forEach(System.out::println);
+    public String  m01(Anime anime){
+        System.out.println(anime);
         return "ok";
     }
 
+//
+//    @GetMapping("/m01")
+//    public String  m01(@RequestParam List<String> animes){
+//        animes.forEach(System.out::println);
+//        return "ok";
+//    }
+//
 //
 //    @GetMapping("/m01")
 //    public String  m01(String [] animes){
