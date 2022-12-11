@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     public void transferToF(int money) {
 
         userMapper.updateM(money);
-//        int i = 10/0;
+        int i = 10/0;
         userMapper.updateF(money);
 
     }
