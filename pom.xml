@@ -11,6 +11,7 @@
         <module>spring01</module>
         <module>spring_mybatis</module>
         <module>aop</module>
+        <module>spring_transaction</module>
     </modules>
     <packaging>pom</packaging>
 
