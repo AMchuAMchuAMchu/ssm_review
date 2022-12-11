@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 //@Transactional()
 public interface UserService {
 
-    @Transactional
+//    @Transactional
     void transferToF(int money);
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
     void recordInfo(int money, String time);
 
 }

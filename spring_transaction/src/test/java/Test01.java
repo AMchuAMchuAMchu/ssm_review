@@ -25,9 +25,9 @@ public class Test01 {
 
         UserService bean = ac.getBean(UserService.class);
 
-        bean.transferToF(100);
         String s = LocalDateTime.now().toString();
         bean.recordInfo(100,s);
+        bean.transferToF(100);
 
 
     }

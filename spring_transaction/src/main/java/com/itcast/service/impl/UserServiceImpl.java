@@ -4,6 +4,8 @@ import com.itcast.dao.UserMapper;
 import com.itcast.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -22,6 +24,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    @Transactional
     public void transferToF(int money) {
 
         userMapper.updateM(money);
@@ -31,6 +34,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void recordInfo(int money, String time) {
         userMapper.recordInfo(money,time);
     }
