@@ -25,8 +25,11 @@ public class AnimeTest01 {
 
 //        bean.selectAnime();
 
-        AnimeService bean = ac.getBean(AnimeService.class);
-        bean.selectAnime();
+        AnimeService bean01 = ac.getBean(AnimeService.class);
+        AnimeService bean02 = ac.getBean(AnimeService.class);
+        bean01.selectAnime();
+        System.out.println(bean01);
+        System.out.println(bean02);
 
     }
 
