@@ -1,6 +1,7 @@
 package com.itcast.dao;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
 
 import java.time.LocalDateTime;
@@ -22,6 +23,6 @@ public interface UserMapper {
     void updateF(int money);
 
     @Insert("insert into log_account values ('樱满集','楪祈',#{money},#{time})")
-    void recordInfo(int money, String time);
+    void recordInfo(@Param("money") int money,@Param("time") String time);
 
 }
