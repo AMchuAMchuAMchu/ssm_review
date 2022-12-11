@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.jws.soap.InitParam;
+
 /**
  * Description ==> TODO
  * BelongsProject ==> ssm_review
@@ -16,8 +18,8 @@ import org.springframework.stereotype.Service;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Service
-@Scope
-public class AnimeServiceImpl implements AnimeService {
+//@Scope(value = "prototype")
+public class AnimeServiceImpl implements AnimeService{
 
     @Autowired
     private AnimeDao animeDao;
@@ -28,4 +30,6 @@ public class AnimeServiceImpl implements AnimeService {
         animeDao.selectAnime();
         return new Anime();
     }
+
+
 }

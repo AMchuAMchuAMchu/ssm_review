@@ -1,6 +1,7 @@
 package com.itcast;
 
 import com.itcast.config.SpringConfig;
+import com.itcast.entity.User;
 import com.itcast.service.AnimeService;
 import com.itcast.service.impl.AnimeServiceImpl;
 import org.junit.Test;
@@ -30,6 +31,9 @@ public class AnimeTest01 {
         bean01.selectAnime();
         System.out.println(bean01);
         System.out.println(bean02);
+
+        User bean = ac.getBean(User.class);
+        System.out.println(">>"+bean);
 
     }
 
