@@ -1,6 +1,7 @@
 package com.itcast.mvc;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,14 +25,18 @@ public class AnimeController {
 
 
 
-    @GetMapping("/m01")
+    @PostMapping("/m01")
     public String  m01(String name){
-
         System.out.println(">>"+name);
-
         return "ok";
-
     }
+//
+//
+//    @GetMapping("/m01")
+//    public String  m01(String name){
+//        System.out.println(">>"+name);
+//        return "ok";
+//    }
 
     @GetMapping
     public void m010(HttpServletRequest req, HttpServletResponse resp){
