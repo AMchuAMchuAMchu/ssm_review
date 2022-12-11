@@ -7,6 +7,10 @@ import com.itcast.service.impl.AnimeServiceImpl;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  * Description ==> TODO
  * BelongsProject ==> ssm_review
@@ -25,17 +29,28 @@ public class AnimeTest01 {
 //        AnimeServiceImpl bean = ac.getBean(AnimeServiceImpl.class);
 
 //        bean.selectAnime();
+//
+//        AnimeService bean01 = ac.getBean(AnimeService.class);
+//        AnimeService bean02 = ac.getBean(AnimeService.class);
+//        bean01.selectAnime();
+//        System.out.println(bean01);
+//        System.out.println(bean02);
+//
+//        User bean = ac.getBean(User.class);
+//        System.out.println(">>"+bean);
+//
+//        ac.registerShutdownHook();
 
-        AnimeService bean01 = ac.getBean(AnimeService.class);
-        AnimeService bean02 = ac.getBean(AnimeService.class);
-        bean01.selectAnime();
-        System.out.println(bean01);
-        System.out.println(bean02);
+        DataSource bean = ac.getBean(DataSource.class);
 
-        User bean = ac.getBean(User.class);
-        System.out.println(">>"+bean);
+        Connection connection = null;
+        try {
+            connection = bean.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        ac.registerShutdownHook();
+        System.out.println(connection);
 
     }
 

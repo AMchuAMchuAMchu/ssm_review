@@ -16,4 +16,6 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("com.itcast")
 @PropertySource("classpath:jdbc.properties")
 public class SpringConfig {
+
+
 }
