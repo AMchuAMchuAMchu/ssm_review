@@ -26,7 +26,7 @@ public class AnimeController {
 
 
     @GetMapping("/m01")
-    public String  m01(List<String> animes){
+    public String  m01(@RequestParam List<String> animes){
         animes.forEach(System.out::println);
         return "ok";
     }
