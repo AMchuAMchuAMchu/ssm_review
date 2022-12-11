@@ -35,6 +35,8 @@ public class AnimeTest01 {
         User bean = ac.getBean(User.class);
         System.out.println(">>"+bean);
 
+        ac.registerShutdownHook();
+
     }
 
 }
