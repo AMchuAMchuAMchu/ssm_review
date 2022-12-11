@@ -20,6 +20,8 @@ public class UserServiceTest01 {
 
         UserService bean = ac.getBean(UserService.class);
 
+
+
         bean.selectUser("kirito");
 
 

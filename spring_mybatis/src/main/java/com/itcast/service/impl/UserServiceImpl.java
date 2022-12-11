@@ -3,9 +3,15 @@ package com.itcast.service.impl;
 import com.itcast.entity.User;
 import com.itcast.mapper.UserMapper;
 import com.itcast.service.UserService;
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Description ==> TODO
@@ -19,12 +25,20 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
 
-    @Autowired
-    private SqlSession sqlSession;
+
 
     @Override
     public void selectUser(String username) {
         System.out.println("service...");
+        InputStream ras = null;
+        try {
+            ras = Resources.getResourceAsStream("mybatis-config.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(ras);
+
+        SqlSession sqlSession = build.openSession(true);
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         User user = mapper.selectUser(username);
         System.out.println(user);

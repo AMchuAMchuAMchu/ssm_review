@@ -16,6 +16,5 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ComponentScan("com.itcast")
 @PropertySource("classpath:jdbc.properties")
-@Import({CFMybatisConfig.class})
 public class CFSpringConfig {
 }
