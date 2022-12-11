@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 
 /**
@@ -27,6 +28,11 @@ public class AnimeController {
 
     @PostMapping("/m01")
     public String  m01(HttpServletRequest req){
+        try {
+            req.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         String name = req.getParameter("name");
         System.out.println(">>"+name);
         return "ok";
