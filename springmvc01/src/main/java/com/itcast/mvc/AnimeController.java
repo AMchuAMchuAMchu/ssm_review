@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 /**
  * Description ==> TODO
@@ -23,11 +24,21 @@ public class AnimeController {
 
 
 
-    @DeleteMapping("/m01")
-    public String  m01(){
-        System.out.println("deleteing....");
+    @GetMapping("/m01")
+    public String  m01(String [] animes){
+//        System.out.println("deleteing....");
+        System.out.println(Arrays.toString(animes));
         return "ok";
     }
+
+
+//
+//
+//    @DeleteMapping("/m01")
+//    public String  m01(){
+//        System.out.println("deleteing....");
+//        return "ok";
+//    }
 
 
 //    @PostMapping("/m01")
