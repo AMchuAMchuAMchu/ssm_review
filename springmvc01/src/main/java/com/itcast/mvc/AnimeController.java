@@ -1,9 +1,6 @@
 package com.itcast.mvc;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,17 +23,24 @@ public class AnimeController {
 
 
 
-    @PostMapping("/m01")
-    public String  m01(HttpServletRequest req){
-        try {
-            req.setCharacterEncoding("utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        String name = req.getParameter("name");
-        System.out.println(">>"+name);
+    @DeleteMapping("/m01")
+    public String  m01(){
+        System.out.println("deleteing....");
         return "ok";
     }
+
+
+//    @PostMapping("/m01")
+//    public String  m01(HttpServletRequest req){
+//        try {
+//            req.setCharacterEncoding("utf-8");
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+//        String name = req.getParameter("name");
+//        System.out.println(">>"+name);
+//        return "ok";
+//    }
 //
 //
 //    @GetMapping("/m01")
