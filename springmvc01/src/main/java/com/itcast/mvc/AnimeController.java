@@ -26,7 +26,8 @@ public class AnimeController {
 
 
     @PostMapping("/m01")
-    public String  m01(String name){
+    public String  m01(HttpServletRequest req){
+        String name = req.getParameter("name");
         System.out.println(">>"+name);
         return "ok";
     }
