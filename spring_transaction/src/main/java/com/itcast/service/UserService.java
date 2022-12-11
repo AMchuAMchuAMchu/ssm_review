@@ -1,6 +1,7 @@
 package com.itcast.service;
 
 import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
@@ -19,7 +20,7 @@ public interface UserService {
     @Transactional
     void transferToF(int money);
 
-    @Transactional(isolation = Isolation.DEFAULT)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     void recordInfo(int money, String time);
 
 }
