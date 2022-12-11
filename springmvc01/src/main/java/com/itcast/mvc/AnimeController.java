@@ -21,8 +21,20 @@ import java.time.LocalDateTime;
 @RestController
 public class AnimeController {
 
+
+
+
+    @GetMapping("/m01")
+    public String  m01(String name){
+
+        System.out.println(">>"+name);
+
+        return "ok";
+
+    }
+
     @GetMapping
-    public void m01(HttpServletRequest req, HttpServletResponse resp){
+    public void m010(HttpServletRequest req, HttpServletResponse resp){
         resp.setContentType("text/html;charset=utf-8");
         System.out.println(LocalDateTime.now());
         String s = "<h1>楪祈!!!椎名真白!!!🤣🤣🤣</h1>";
