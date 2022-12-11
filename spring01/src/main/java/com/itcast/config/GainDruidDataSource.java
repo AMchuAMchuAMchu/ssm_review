@@ -23,7 +23,7 @@ public class GainDruidDataSource {
     private String driverClassName;
     @Value("${url}")
     private String url;
-    @Value("${username}")
+    @Value("${jdbc.username}")
     private String username;
     @Value("${password}")
     private String password;
