@@ -13,10 +13,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Anime {
 
-    public void getAnimeInfo(){
-        System.out.println("罪恶王冠");
-        System.out.println("罪恶王冠");
-        System.out.println("罪恶王冠");
+//    public void getAnimeInfo(String name){
+    public Object getAnimeInfo(String name){
+        System.out.println("罪恶王冠::"+name);
+        System.out.println("罪恶王冠::"+name);
+        System.out.println("罪恶王冠::"+name);
+        return name;
     }
 
 

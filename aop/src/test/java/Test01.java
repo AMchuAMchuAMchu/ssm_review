@@ -20,7 +20,12 @@ public class Test01 {
 
         Anime bean = ac.getBean(Anime.class);
 
-        bean.getAnimeInfo();
+//        Object o = bean.getAnimeInfo("校条祭");
+        Object o = bean.getAnimeInfo("校条祭");
+
+        System.out.println(o);
+
+//        System.out.println(o);
 
 
     }

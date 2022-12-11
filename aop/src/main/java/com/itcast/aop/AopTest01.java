@@ -1,11 +1,12 @@
 package com.itcast.aop;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 /**
  * Description ==> TODO
@@ -18,13 +19,38 @@ import java.time.LocalDateTime;
 @Component
 @Aspect
 public class AopTest01 {
+//
+//    @Pointcut("execution(void com.itcast.*.*.getAnimeInfo(..))")
+//    public void pt(){}
 
-    @Pointcut("execution(void com.itcast.service.Anime.getAnimeInfo())")
+    @Pointcut("execution(Object com.itcast.*.*.getAnimeInfo(..))")
     public void pt(){}
 
-    @Before("pt()")
-    public void invoke01(){
-        System.out.println("::"+ LocalDateTime.now());
+//    @Before("pt()")
+//    public void invoke01(){
+//        System.out.println("::"+ LocalDateTime.now());
+//    }
+//
+//    @After("pt()")
+//    public void invoke01(JoinPoint joinPoint){
+//        System.out.println(">>"+LocalDateTime.now());
+//    }
+   @Around("pt()")
+    public Object invoke01(ProceedingJoinPoint pjp){
+
+       Object[] args = pjp.getArgs();
+
+       Arrays.fill(args, "楪祈");
+       try {
+           pjp.proceed(args);
+       } catch (Throwable e) {
+           e.printStackTrace();
+       }
+
+       System.out.println(">>"+LocalDateTime.now());
+       Object target = pjp.getTarget();
+       target = "楪祈==>樱满集";
+       return target;
     }
 
 }
