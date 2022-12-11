@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 /**
@@ -21,10 +22,12 @@ import java.time.LocalDateTime;
 public class AnimeController {
 
     @GetMapping
-    public String m01(HttpServletRequest req, HttpServletResponse resp){
+    public String m01(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html;charset=utf-8");
         System.out.println(LocalDateTime.now());
-        return "<h1>楪祈!!!椎名真白!!!🤣🤣🤣</h1>";
+        String s = "<h1>楪祈!!!椎名真白!!!🤣🤣🤣</h1>";
+        resp.getWriter().write(s);
+        return "ok";
     }
 
 
