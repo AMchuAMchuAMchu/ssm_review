@@ -34,6 +34,13 @@ public class AnimeController {
 
 //
 //    @GetMapping("/m01")
+//    public String  m01(Anime anime){
+//        System.out.println(anime);
+//        return "ok";
+//    }
+//
+//
+//    @GetMapping("/m01")
 //    public String  m01(@RequestParam List<String> animes){
 //        animes.forEach(System.out::println);
 //        return "ok";
