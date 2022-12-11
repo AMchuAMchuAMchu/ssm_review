@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.jws.soap.InitParam;
 
 /**
@@ -31,5 +33,14 @@ public class AnimeServiceImpl implements AnimeService{
         return new Anime();
     }
 
+    @PostConstruct
+    public void init(){
+        System.out.println("init...");
+    }
+
+    @PreDestroy
+    public void destroy(){
+        System.out.println("destroy...");
+    }
 
 }
