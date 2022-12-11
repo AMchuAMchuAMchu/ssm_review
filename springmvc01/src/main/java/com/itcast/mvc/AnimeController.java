@@ -22,11 +22,15 @@ import java.time.LocalDateTime;
 public class AnimeController {
 
     @GetMapping
-    public String m01(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public String m01(HttpServletRequest req, HttpServletResponse resp){
         resp.setContentType("text/html;charset=utf-8");
         System.out.println(LocalDateTime.now());
         String s = "<h1>楪祈!!!椎名真白!!!🤣🤣🤣</h1>";
-        resp.getWriter().write(s);
+        try {
+            resp.getWriter().write(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return "ok";
     }
 
