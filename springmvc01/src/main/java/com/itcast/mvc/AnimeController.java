@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Description ==> TODO
@@ -25,12 +26,19 @@ public class AnimeController {
 
 
     @GetMapping("/m01")
-    public String  m01(String [] animes){
-//        System.out.println("deleteing....");
-        System.out.println(Arrays.toString(animes));
+    public String  m01(List<String> animes){
+        animes.forEach(System.out::println);
         return "ok";
     }
 
+//
+//    @GetMapping("/m01")
+//    public String  m01(String [] animes){
+////        System.out.println("deleteing....");
+//        System.out.println(Arrays.toString(animes));
+//        return "ok";
+//    }
+//
 
 //
 //
