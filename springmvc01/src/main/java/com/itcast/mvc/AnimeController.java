@@ -27,7 +27,7 @@ public class AnimeController {
 
 
     @GetMapping("/m01")
-    public String  m01(Anime anime){
+    public String  m01(@RequestBody Anime anime){
         System.out.println(anime);
         return "ok";
     }
