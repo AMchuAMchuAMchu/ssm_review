@@ -1,5 +1,7 @@
 package com.itcast;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.itcast.dao.UserDao;
 import com.itcast.entity.User;
 import org.junit.jupiter.api.Test;
@@ -21,12 +23,19 @@ class MybatisPlus01ApplicationTests {
 //        List<User> users = userDao.selectList(null);
 //
 //        users.forEach(System.out::println);
-        User user = new User();
-        user.setUsername("椎名真白1001");
-        user.setMoney(2000);
-//        userDao.insert(user);
+//        User user = new User();
+//        user.setUsername("椎名真白1001");
+//        user.setMoney(2000);
+////        userDao.insert(user);
+//
+//        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+//        lqw.eq(User::getUsername,"椎名真白");
+//        userDao.update(user,lqw);
 
-        userDao.update(user,null);
+        User user = new User("雪乃",2000);
+
+        userDao.insert(user);
+
 
     }
 

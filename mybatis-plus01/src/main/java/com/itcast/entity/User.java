@@ -13,8 +13,23 @@ import lombok.Data;
 @Data
 public class User {
 
+    private int id;
+
     private String username;
 
     private int money;
 
+    public User(String username, int money) {
+        this.username = username;
+        this.money = money;
+    }
+
+    public User(int id, String username, int money) {
+        this.id = id;
+        this.username = username;
+        this.money = money;
+    }
+
+    public User() {
+    }
 }
