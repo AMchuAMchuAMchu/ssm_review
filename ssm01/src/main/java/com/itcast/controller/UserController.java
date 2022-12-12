@@ -35,7 +35,7 @@ public class UserController {
 
         resp.setContentType("text/html;charset=utf-8");
 
-        R<List<User>> r = new R<>(200, "查询成功!!😁😁");
+        R<List<User>> r = new R<>(200, "查询成功!!😁😁",users);
 
         try {
             resp.getWriter().write(r.toString());
