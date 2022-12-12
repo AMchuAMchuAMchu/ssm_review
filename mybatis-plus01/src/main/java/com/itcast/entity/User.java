@@ -21,6 +21,7 @@ public class User {
     @TableField(value = "username")
     private String name;
 
+    @TableField(select = false)
     private String money;
 
 
