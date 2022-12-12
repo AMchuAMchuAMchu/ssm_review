@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class MybatisPlus01ApplicationTests {
@@ -70,9 +71,9 @@ class MybatisPlus01ApplicationTests {
 
         qw.select("count(*)");
 
-        List<User> users = userDao.selectList(qw);
+        List<Map<String, Object>> maps = userDao.selectMaps(qw);
 
-        users.forEach(System.out::println);
+        System.out.println(maps);
 
 
     }
