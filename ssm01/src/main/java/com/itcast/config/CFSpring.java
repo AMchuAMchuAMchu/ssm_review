@@ -18,10 +18,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Configuration
-@EnableWebMvc
 @ComponentScan("com.itcast.service")
 @PropertySource("classpath:jdbc.properties")
 @EnableTransactionManagement
-@Import({CFJdbc.class,CFMybatis.class, ProjectExceptionHandler.class, UserInterceptor.class,CFSpringMVC.class})
+@Import({CFJdbc.class,CFMybatis.class, ProjectExceptionHandler.class, UserInterceptor.class})
 public class CFSpring {
 }

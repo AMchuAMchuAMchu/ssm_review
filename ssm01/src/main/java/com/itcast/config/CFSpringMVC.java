@@ -16,9 +16,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Configuration
-@ComponentScan("com.itcast.controller")
+@ComponentScan("com.itcast")
 @EnableWebMvc
 @Import({CFServletInit.class,CFMVCInterceptor.class,UserInterceptor.class})
 public class CFSpringMVC {
-
 }
