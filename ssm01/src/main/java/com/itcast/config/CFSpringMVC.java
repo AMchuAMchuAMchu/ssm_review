@@ -10,12 +10,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * BelongsProject ==> ssm_review
  * BelongsPackage ==> com.itcast.config
  * Version ==> 1.0
- * CreateTime ==> 2022-12-11 16:18:35
+ * CreateTime ==> 2022-12-12 09:56:56
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Configuration
-@ComponentScan("com.itcast.mvc")
-@Import(CFServletInit.class)
+@ComponentScan("com.itcast.controller")
 @EnableWebMvc
+@Import({CFServletInit.class})
 public class CFSpringMVC {
+
 }

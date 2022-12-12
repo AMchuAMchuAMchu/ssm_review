@@ -13,6 +13,7 @@
         <module>aop</module>
         <module>spring_transaction</module>
         <module>springmvc01</module>
+        <module>ssm01</module>
     </modules>
     <packaging>pom</packaging>
 
