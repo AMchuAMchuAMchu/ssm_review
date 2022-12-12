@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean insertUser(String username, String money) {
-        int i = userMapper.insertUser(username, money);
+        long i = userMapper.insertUser(username, money);
         System.out.println("service...");
         return i>0;
     }
