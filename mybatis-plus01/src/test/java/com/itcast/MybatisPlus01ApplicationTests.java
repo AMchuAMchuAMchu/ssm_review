@@ -32,9 +32,9 @@ class MybatisPlus01ApplicationTests {
 //        lqw.eq(User::getUsername,"椎名真白");
 //        userDao.update(user,lqw);
 
-        User user = new User("雪乃",2000);
-
-        userDao.insert(user);
+//        User user = new User("雪乃",2000);
+//
+//        userDao.insert(user);
 
         userDao.deleteById(2);
 
