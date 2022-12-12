@@ -1,5 +1,6 @@
 package com.itcast.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 /**
@@ -15,6 +16,7 @@ public class User {
 
     private int id;
 
+    @TableField(value = "username")
     private String name;
 
     private String money;
