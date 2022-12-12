@@ -81,9 +81,11 @@ class MybatisPlus01ApplicationTests {
 //        System.out.println(maps);
 
 
-        List<User> users = userDao.selectList(null);
+//        List<User> users = userDao.selectList(null);
+//
+//        users.forEach(System.out::println);
 
-        users.forEach(System.out::println);
+        userDao.deleteById(1);
 
 
     }
