@@ -22,6 +22,6 @@ public class CFMVCInterceptor extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(userInterceptor).addPathPatterns("/*");
+        registry.addInterceptor(userInterceptor).addPathPatterns("/**");
     }
 }
