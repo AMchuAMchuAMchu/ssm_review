@@ -54,16 +54,18 @@ public class UserController {
         boolean b = false;
 
         resp.setContentType("text/html;charset=utf-8");
-        try {
-            b = userService.insertUser(user.getUsername(), user.getMoney());
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                resp.getWriter().write("<h1>残念!!抛异常了!!!</h1>");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
+        b = userService.insertUser(user.getUsername(), user.getMoney());
+//        try {
+//        } catch (Exception e) {
+//            System.out.println(".............异常!!!!");
+//            try {
+//                resp.getWriter().write("<h1>残念!!抛异常了!!!</h1>");
+//            } catch (IOException ex) {
+//                ex.printStackTrace();
+//            }
+
+
+
 
         R r= new R(b ? 200 : 404, b ? "哦咩爹多!!🤣🤣" : "残念~~😅😅");
 
