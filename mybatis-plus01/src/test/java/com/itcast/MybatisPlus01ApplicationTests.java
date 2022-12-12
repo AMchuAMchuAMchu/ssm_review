@@ -58,13 +58,22 @@ class MybatisPlus01ApplicationTests {
 //
 //        users.forEach(System.out::println);
 
+//        QueryWrapper<User> qw = new QueryWrapper<>();
+//
+//        qw.groupBy("money");
+//
+//        List<User> users = userDao.selectList(qw);
+//
+//        users.forEach(System.out::println);
+
         QueryWrapper<User> qw = new QueryWrapper<>();
 
-        qw.groupBy("money");
+        qw.select("count(*)");
 
         List<User> users = userDao.selectList(qw);
 
         users.forEach(System.out::println);
+
 
     }
 
