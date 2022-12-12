@@ -52,6 +52,8 @@ public class UserController {
         System.out.println(">>"+user);
 
         boolean b = false;
+
+        resp.setContentType("text/html;charset=utf-8");
         try {
             b = userService.insertUser(user.getUsername(), user.getMoney());
         } catch (Exception e) {
