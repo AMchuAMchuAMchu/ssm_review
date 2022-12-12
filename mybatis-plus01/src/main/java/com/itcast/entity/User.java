@@ -17,15 +17,15 @@ public class User {
 
     private String username;
 
-    private int money;
+    private String money;
 
-    public User(String username, int money) {
+    public User(int id, String username, String money) {
+        this.id = id;
         this.username = username;
         this.money = money;
     }
 
-    public User(int id, String username, int money) {
-        this.id = id;
+    public User(String username, String money) {
         this.username = username;
         this.money = money;
     }

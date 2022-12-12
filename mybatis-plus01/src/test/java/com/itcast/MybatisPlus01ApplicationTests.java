@@ -2,6 +2,7 @@ package com.itcast;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itcast.dao.UserDao;
 import com.itcast.entity.User;
@@ -49,11 +50,19 @@ class MybatisPlus01ApplicationTests {
 //
 //        Page<User> users = userDao.selectPage(userPage,lqw);
 
-        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+//        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+//
+//        lqw.ge(User::getMoney,2000).le(User::getMoney,3000);
+//
+//        List<User> users = userDao.selectList(lqw);
+//
+//        users.forEach(System.out::println);
 
-        lqw.ge(User::getMoney,2000).le(User::getMoney,3000);
+        QueryWrapper<User> qw = new QueryWrapper<>();
 
-        List<User> users = userDao.selectList(lqw);
+        qw.groupBy("money");
+
+        List<User> users = userDao.selectList(qw);
 
         users.forEach(System.out::println);
 
