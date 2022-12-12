@@ -32,7 +32,8 @@ public class UserController {
 
 //        users.forEach(System.out::println);
         System.out.println("controller...");
-        return users.toString();
+        String s = users.toString();
+        return s;
 
     }
 
