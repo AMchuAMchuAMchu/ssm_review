@@ -1,8 +1,10 @@
 package com.itcast.config;
 
+import com.itcast.interceptor.UserInterceptor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -16,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan("com.itcast.controller")
 @EnableWebMvc
-@Import({CFServletInit.class})
+@Import({CFServletInit.class, UserInterceptor.class,CFMVCInterceptor.class})
 public class CFSpringMVC {
 
 }
