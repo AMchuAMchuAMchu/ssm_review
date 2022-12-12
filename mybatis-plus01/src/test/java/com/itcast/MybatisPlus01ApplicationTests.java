@@ -18,9 +18,14 @@ class MybatisPlus01ApplicationTests {
     @Test
     void contextLoads() {
 
-        List<User> users = userDao.selectList(null);
+//        List<User> users = userDao.selectList(null);
+//
+//        users.forEach(System.out::println);
+        User user = new User();
+        user.setUsername("椎名真白");
+        user.setMoney(2000);
+        userDao.insert(user);
 
-        users.forEach(System.out::println);
     }
 
 }
