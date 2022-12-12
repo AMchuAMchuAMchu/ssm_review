@@ -22,9 +22,11 @@ class MybatisPlus01ApplicationTests {
 //
 //        users.forEach(System.out::println);
         User user = new User();
-        user.setUsername("椎名真白");
+        user.setUsername("椎名真白1001");
         user.setMoney(2000);
-        userDao.insert(user);
+//        userDao.insert(user);
+
+        userDao.update(user,null);
 
     }
 
