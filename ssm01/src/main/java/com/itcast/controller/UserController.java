@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -26,14 +27,15 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public String users(){
+    public String users(HttpServletResponse resp){
 
         List<User> users = userService.selectUsers();
 
+        resp.setCharacterEncoding("utf-8");
 //        users.forEach(System.out::println);
+        System.out.println(">>"+users);
         System.out.println("controller...");
         String s = users.toString();
-        System.out.println(">>"+s);
         return s;
 
     }

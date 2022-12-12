@@ -27,6 +27,6 @@ public class UserServiceImpl implements UserService {
         List<User> users = userMapper.selectUsers();
         System.out.println(users);
         System.out.println("service...");
-        return null;
+        return users;
     }
 }
