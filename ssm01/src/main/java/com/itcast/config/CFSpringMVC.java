@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan("com.itcast.controller")
 @EnableWebMvc
-@Import({CFServletInit.class,CFMVCInterceptor.class})
+@Import({CFServletInit.class,CFMVCInterceptor.class,UserInterceptor.class})
 public class CFSpringMVC {
 
 }
