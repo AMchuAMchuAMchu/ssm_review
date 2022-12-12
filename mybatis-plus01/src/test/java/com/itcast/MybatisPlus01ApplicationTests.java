@@ -85,7 +85,7 @@ class MybatisPlus01ApplicationTests {
 //
 //        users.forEach(System.out::println);
 
-        userDao.deleteById(1);
+        userDao.deleteById(4);
 
 
     }

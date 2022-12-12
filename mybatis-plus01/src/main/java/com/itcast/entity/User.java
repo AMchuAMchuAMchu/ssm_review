@@ -19,7 +19,6 @@ import lombok.Data;
 public class User {
 
 //    @TableId
-    @TableLogic(value = "0",delval = "1")
     private int id;
 
     @TableField(value = "username")
@@ -30,6 +29,9 @@ public class User {
 
     @TableField(exist = false)
     private int uuid;
+
+    @TableLogic(value = "0",delval = "1")
+    private int deleteId;
 
 
 
