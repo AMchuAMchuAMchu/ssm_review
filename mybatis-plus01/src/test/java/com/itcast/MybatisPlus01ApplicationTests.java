@@ -43,9 +43,8 @@ class MybatisPlus01ApplicationTests {
 
         Page<User> userPage = new Page<>(1,2);
 
-        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
 
-        Page<User> users = userDao.selectPage(userPage, lqw);
+        Page<User> users = userDao.selectPage(userPage,null);
 
         users.getRecords().forEach(System.out::println);
 
