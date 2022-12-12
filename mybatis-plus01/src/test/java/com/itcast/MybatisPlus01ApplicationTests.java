@@ -51,7 +51,7 @@ class MybatisPlus01ApplicationTests {
 
         LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
 
-        lqw.ge(User::getMoney,2000).lt(User::getMoney,3000);
+        lqw.ge(User::getMoney,2000).le(User::getMoney,3000);
 
         List<User> users = userDao.selectList(lqw);
 
