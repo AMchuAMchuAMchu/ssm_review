@@ -29,4 +29,11 @@ public class UserServiceImpl implements UserService {
         System.out.println("service...");
         return users;
     }
+
+    @Override
+    public boolean insertUser(String username, int money) {
+        int i = userMapper.insertUser(username, money);
+        System.out.println("service...");
+        return i>0;
+    }
 }

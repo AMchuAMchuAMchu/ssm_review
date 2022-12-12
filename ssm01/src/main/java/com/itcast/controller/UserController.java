@@ -1,5 +1,6 @@
 package com.itcast.controller;
 
+import com.itcast.entity.R;
 import com.itcast.entity.User;
 import com.itcast.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -26,19 +28,50 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    public String users(HttpServletResponse resp){
+    @GetMapping("/getAll")
+    public void users(HttpServletResponse resp){
 
         List<User> users = userService.selectUsers();
 
-        resp.setCharacterEncoding("utf-8");
-//        users.forEach(System.out::println);
-        System.out.println(">>"+users);
+        resp.setContentType("text/html;charset=utf-8");
+
+        R<List<User>> r = new R<>(200, "查询成功!!😁😁");
+
+        try {
+            resp.getWriter().write(r.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("controller...");
-        String s = users.toString();
-        return s;
+    }
+
+    @GetMapping("/insert")
+    public void insert(String username,int money,HttpServletResponse resp){
+
+        System.out.println("controller...");
+
+        boolean b = false;
+        try {
+            b = userService.insertUser(username, money);
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                resp.getWriter().write("<h1>残念!!抛异常了!!!</h1>");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        R r= new R(b ? 200 : 404, b ? "哦咩爹多!!🤣🤣" : "残念~~😅😅");
+
+        try {
+            resp.getWriter().write(r.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
+
 
 
 }

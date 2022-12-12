@@ -2,6 +2,7 @@ package com.itcast.mapper;
 
 import com.itcast.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -18,5 +19,8 @@ public interface UserMapper {
 
     @Select("select * from user")
     List<User> selectUsers();
+
+    @Select("insert into user values(#{username},#{money})")
+    int insertUser(@Param("username") String username,@Param("money") int money);
 
 }
