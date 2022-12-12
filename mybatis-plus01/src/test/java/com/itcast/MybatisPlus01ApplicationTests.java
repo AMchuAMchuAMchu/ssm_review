@@ -2,6 +2,7 @@ package com.itcast;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itcast.dao.UserDao;
 import com.itcast.entity.User;
 import org.junit.jupiter.api.Test;
@@ -36,8 +37,17 @@ class MybatisPlus01ApplicationTests {
 //
 //        userDao.insert(user);
 
-        userDao.deleteById(2);
+//        userDao.deleteById(2);
+//
 
+
+        Page<User> userPage = new Page<>(1,2);
+
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+
+        List<User> users = userDao.selectList(lqw);
+
+        users.forEach(System.out::println);
 
     }
 
