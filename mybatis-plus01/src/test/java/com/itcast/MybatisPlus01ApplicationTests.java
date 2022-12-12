@@ -71,7 +71,9 @@ class MybatisPlus01ApplicationTests {
 
 //        qw.select("count(*)");
 
-        qw.select("max(money)");
+//        qw.select("max(money)");
+//        qw.select("min(money)");
+        qw.select("sum(money)");
 
         List<Map<String, Object>> maps = userDao.selectMaps(qw);
 
