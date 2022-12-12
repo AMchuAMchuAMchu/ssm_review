@@ -69,7 +69,9 @@ class MybatisPlus01ApplicationTests {
 
         QueryWrapper<User> qw = new QueryWrapper<>();
 
-        qw.select("count(*)");
+//        qw.select("count(*)");
+
+        qw.select("max(money)");
 
         List<Map<String, Object>> maps = userDao.selectMaps(qw);
 
