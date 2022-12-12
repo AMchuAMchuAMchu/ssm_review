@@ -46,13 +46,13 @@ public class UserController {
     }
 
     @GetMapping("/insert")
-    public void insert(String username,int money,HttpServletResponse resp){
+    public void insert(User user,HttpServletResponse resp){
 
         System.out.println("controller...");
 
         boolean b = false;
         try {
-            b = userService.insertUser(username, money);
+            b = userService.insertUser(user.getUsername(), user.getMoney());
         } catch (Exception e) {
             e.printStackTrace();
             try {
