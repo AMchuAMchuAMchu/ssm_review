@@ -31,9 +31,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean insertUser(String username, String money) {
-        Integer i = userMapper.insertUser(username, money);
+    public boolean insertUser(String username, String money) {userMapper.insertUser(username, money);
         System.out.println("service...");
-        return i>0;
+        return true;
     }
 }
