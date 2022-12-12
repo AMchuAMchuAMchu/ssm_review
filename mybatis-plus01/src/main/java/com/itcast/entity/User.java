@@ -15,21 +15,10 @@ public class User {
 
     private int id;
 
-    private String username;
+    private String name;
 
     private String money;
 
-    public User(int id, String username, String money) {
-        this.id = id;
-        this.username = username;
-        this.money = money;
-    }
 
-    public User(String username, String money) {
-        this.username = username;
-        this.money = money;
-    }
 
-    public User() {
-    }
 }

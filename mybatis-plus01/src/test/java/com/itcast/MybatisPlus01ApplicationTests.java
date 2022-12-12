@@ -67,18 +67,23 @@ class MybatisPlus01ApplicationTests {
 //
 //        users.forEach(System.out::println);
 
-        QueryWrapper<User> qw = new QueryWrapper<>();
+//        QueryWrapper<User> qw = new QueryWrapper<>();
 
 //        qw.select("count(*)");
 
 //        qw.select("max(money)");
 //        qw.select("min(money)");
 //        qw.select("sum(money)");
-        qw.select("avg(money)");
+//        qw.select("avg(money)");
+//
+//        List<Map<String, Object>> maps = userDao.selectMaps(qw);
+//
+//        System.out.println(maps);
 
-        List<Map<String, Object>> maps = userDao.selectMaps(qw);
 
-        System.out.println(maps);
+        List<User> users = userDao.selectList(null);
+
+        users.forEach(System.out::println);
 
 
     }
