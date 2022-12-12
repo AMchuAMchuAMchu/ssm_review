@@ -41,10 +41,13 @@ class MybatisPlus01ApplicationTests {
 //
 
 
-        Page<User> userPage = new Page<>(1,2);
+        Page<User> userPage = new Page<>(1,10);
 
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
 
-        Page<User> users = userDao.selectPage(userPage,null);
+        lqw.orderByDesc(User::getMoney);
+
+        Page<User> users = userDao.selectPage(userPage,lqw);
 
         users.getRecords().forEach(System.out::println);
 
