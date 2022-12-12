@@ -49,6 +49,7 @@ public class UserController {
     public void insert(User user,HttpServletResponse resp){
 
         System.out.println("controller...");
+        System.out.println(">>"+user);
 
         boolean b = false;
         try {

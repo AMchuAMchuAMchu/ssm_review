@@ -18,6 +18,6 @@ public interface UserService {
 
     List<User> selectUsers();
 
-    boolean insertUser(String username,int money);
+    boolean insertUser(String username,String money);
 
 }

@@ -21,6 +21,6 @@ public interface UserMapper {
     List<User> selectUsers();
 
     @Select("insert into user values(#{username},#{money})")
-    int insertUser(@Param("username") String username,@Param("money") int money);
+    int insertUser(@Param("username") String username,@Param("money") String money);
 
 }

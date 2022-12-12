@@ -15,6 +15,6 @@ public class User {
 
     private String username;
 
-    private int money;
+    private String money;
 
 }
