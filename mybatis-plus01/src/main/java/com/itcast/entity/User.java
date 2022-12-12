@@ -1,6 +1,7 @@
 package com.itcast.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ import lombok.Data;
 @TableName(value = "user01")
 public class User {
 
+//    @TableId
     private int id;
 
     @TableField(value = "username")
@@ -23,6 +25,9 @@ public class User {
 
     @TableField(select = false)
     private String money;
+
+    @TableField(exist = false)
+    private int uuid;
 
 
 
