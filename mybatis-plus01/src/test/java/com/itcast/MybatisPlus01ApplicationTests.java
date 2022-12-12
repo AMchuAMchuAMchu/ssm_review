@@ -36,6 +36,8 @@ class MybatisPlus01ApplicationTests {
 
         userDao.insert(user);
 
+        userDao.deleteById(2);
+
 
     }
 
