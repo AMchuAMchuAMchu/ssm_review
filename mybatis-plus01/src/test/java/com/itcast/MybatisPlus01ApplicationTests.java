@@ -41,15 +41,21 @@ class MybatisPlus01ApplicationTests {
 //
 
 
-        Page<User> userPage = new Page<>(1,10);
+//        Page<User> userPage = new Page<>(1,10);
+//
+//        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+//
+//        lqw.orderByDesc(User::getMoney);
+//
+//        Page<User> users = userDao.selectPage(userPage,lqw);
 
         LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
 
-        lqw.orderByDesc(User::getMoney);
+        lqw.ge(User::getMoney,2000).lt(User::getMoney,3000);
 
-        Page<User> users = userDao.selectPage(userPage,lqw);
+        List<User> users = userDao.selectList(lqw);
 
-        users.getRecords().forEach(System.out::println);
+        users.forEach(System.out::println);
 
     }
 
